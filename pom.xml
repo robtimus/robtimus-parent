@@ -89,6 +89,7 @@
     <version.plugin.install>2.5.2</version.plugin.install>
     <version.plugin.jar>3.2.0</version.plugin.jar>
     <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
+    <version.plugin.moditect>1.0.0.RC1</version.plugin.moditect>
     <version.plugin.release>2.5.3</version.plugin.release>
     <version.plugin.resources>3.1.0</version.plugin.resources>
     <version.plugin.site>3.7.1</version.plugin.site>
@@ -207,6 +208,26 @@
           <groupId>com.github.robtimus</groupId>
           <artifactId>i18n-maven-plugin</artifactId>
           <version>${version.plugin.i18n}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.moditect</groupId>
+          <artifactId>moditect-maven-plugin</artifactId>
+          <version>${version.plugin.moditect}</version>
+          <executions>
+            <execution>
+              <id>add-module-info</id>
+              <phase>package</phase>
+              <goals>
+                <goal>add-module-info</goal>
+              </goals>
+              <configuration>
+                <module>
+                  <moduleInfoFile>${project.basedir}/src/moditect/module-info.java</moduleInfoFile>
+                </module>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
