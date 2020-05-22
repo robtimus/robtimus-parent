@@ -95,6 +95,9 @@
     <version.plugin.site>3.7.1</version.plugin.site>
     <version.plugin.source>3.2.1</version.plugin.source>
     <version.plugin.surefire>2.22.2</version.plugin.surefire>
+
+    <robtimus.site-index.generate>true</robtimus.site-index.generate>
+    <robtimus.site-index.title>Overview</robtimus.site-index.title>
   </properties>
 
   <dependencyManagement>
@@ -248,6 +251,26 @@
                       <include name="LICENSE.txt" />
                     </fileset>
                   </copy>
+                </target>
+              </configuration>
+            </execution>
+            <execution>
+              <id>copy-readme</id>
+              <phase>pre-site</phase>
+              <goals>
+                <goal>run</goal>
+              </goals>
+              <configuration>
+                <target if="${robtimus.site-index.generate}">
+                  <concat destfile="${project.basedir}/src/site/markdown/index.md">
+                    <string xml:space="preserve"><![CDATA[<head>
+  <title>${robtimus.site-index.title}</title>
+</head>
+
+]]></string>
+                    <fileset file="${project.basedir}/README.md" />
+                  </concat>
+                  <replaceregexp file="${project.basedir}/src/site/markdown/index.md" match="${project.url}" replace="" flags="g" />
                 </target>
               </configuration>
             </execution>
