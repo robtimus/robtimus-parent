@@ -78,6 +78,7 @@
 
     <version.plugin.antrun>3.0.0</version.plugin.antrun>
     <version.plugin.assembly>3.3.0</version.plugin.assembly>
+    <version.plugin.build-helper>3.1.0</version.plugin.build-helper>
     <version.plugin.clean>3.1.0</version.plugin.clean>
     <version.plugin.compiler>3.8.1</version.plugin.compiler>
     <version.plugin.dependency>3.1.2</version.plugin.dependency>
@@ -95,6 +96,7 @@
     <version.plugin.site>3.7.1</version.plugin.site>
     <version.plugin.source>3.2.1</version.plugin.source>
     <version.plugin.surefire>2.22.2</version.plugin.surefire>
+    <version.plugin.templating>1.0.0</version.plugin.templating>
 
     <robtimus.site-index.generate>true</robtimus.site-index.generate>
     <robtimus.site-index.title>Overview</robtimus.site-index.title>
@@ -154,6 +156,12 @@
         </plugin>
 
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>templating-maven-plugin</artifactId>
+          <version>${version.plugin.templating}</version>
+        </plugin>
+
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <version>${version.plugin.dependency}</version>
@@ -205,6 +213,12 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${version.plugin.build-helper}</version>
         </plugin>
 
         <plugin>
