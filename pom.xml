@@ -233,6 +233,7 @@
                 <goal>add-module-info</goal>
               </goals>
               <configuration>
+                <overwriteExistingFiles>true</overwriteExistingFiles>
                 <module>
                   <moduleInfoFile>${project.basedir}/src/moditect/module-info.java</moduleInfoFile>
                 </module>
@@ -416,6 +417,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <inherited>false</inherited>
         <configuration>
           <skipDeploy>true</skipDeploy>
         </configuration>
@@ -432,16 +434,19 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
+        <inherited>false</inherited>
       </plugin>
 
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
+        <inherited>false</inherited>
       </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
+        <inherited>false</inherited>
       </plugin>
     </plugins>
   </build>
