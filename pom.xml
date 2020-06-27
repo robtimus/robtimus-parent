@@ -98,6 +98,7 @@
     <version.plugin.source>3.2.1</version.plugin.source>
     <version.plugin.surefire>2.22.2</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
+    <version.plugin.versions>2.7</version.plugin.versions>
 
     <robtimus.site-index.generate>true</robtimus.site-index.generate>
     <robtimus.site-index.title>Overview</robtimus.site-index.title>
@@ -414,6 +415,15 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>${version.plugin.info-reports}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${version.plugin.versions}</version>
+          <configuration>
+            <rulesUri>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/maven-version-rules.xml</rulesUri>
+          </configuration>
         </plugin>
 
         <!-- this plugin is required to make Eclipse lifecycle errors disappear -->
