@@ -79,6 +79,7 @@
     <version.plugin.antrun>3.0.0</version.plugin.antrun>
     <version.plugin.assembly>3.3.0</version.plugin.assembly>
     <version.plugin.build-helper>3.1.0</version.plugin.build-helper>
+    <version.plugin.checkstyle>3.1.1</version.plugin.checkstyle>
     <version.plugin.clean>3.1.0</version.plugin.clean>
     <version.plugin.compiler>3.8.1</version.plugin.compiler>
     <version.plugin.dependency>3.1.2</version.plugin.dependency>
@@ -185,6 +186,36 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>${version.plugin.resources}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${version.plugin.checkstyle}</version>
+          <configuration>
+            <propertyExpansion>basedir=${project.basedir}</propertyExpansion>
+            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle.xml</configLocation>
+            <includeResources>true</includeResources>
+            <includeTestResource>true</includeTestResource>
+            <violationSeverity>warning</violationSeverity>
+            <failOnViolation>true</failOnViolation>
+            <consoleOutput>true</consoleOutput>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>8.32</version>
+            </dependency>
+          </dependencies>
+          <executions>
+            <execution>
+              <phase>validate</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
