@@ -244,58 +244,69 @@
   <!-- Regexes -->
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Two or more empty lines in a row"/>
+    <property name="id" value="two-or-more-empty-lines-in-a-row"/>
     <property name="format" value="^(\r?\n){2,}"/>
     <property name="message" value="Two or more empty lines in a row"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Line ending in whitespace"/>
+    <property name="id" value="line-ending-in-whitespace"/>
     <property name="format" value="\s+$"/>
     <property name="message" value="Line ending in whitespace"/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Empty line after line equaling {, ( or ["/>
+    <property name="id" value="empty-line-after-single-opening-character"/>
     <property name="format" value="\r?\n[\s&amp;&amp;[^\r\n]]*[{(\[]\r?\n\r?\n"/>
     <property name="message" value="Empty line after line equaling {, ( or ["/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Empty line before line equaling }, ) or ]"/>
+    <property name="id" value="empty-line-before-single-closing-character"/>
     <property name="format" value="^\r?\n\s*[})\]]\r?\n"/>
     <property name="message" value="Empty line before line equaling }, ) or ]"/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Empty line between imports"/>
+    <property name="id" value="empty-line-between-imports"/>
     <property name="format" value="import .*;\r?\n\r?\nimport "/>
     <property name="message" value="Empty line between imports"/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Missing empty line after package statement"/>
+    <property name="id" value="missing-empty-line-after-package"/>
     <property name="format" value="^package .*;\r?\n(?!(\r?\n)|$)"/>
     <property name="message" value="Missing empty line after package statement"/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Missing empty line after imports"/>
+    <property name="id" value="missing-empty-line-after-imports"/>
     <property name="format" value="^import .*;\r?\n(?!(\r?\n)|\s*import |$)"/>
     <property name="message" value="Missing empty line after imports"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Whitespace before package statement"/>
+    <property name="id" value="whitespace-before-package"/>
     <property name="format" value="^[ ]+package "/>
     <property name="message" value="Whitespace before package statement"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Whitespace before import statement"/>
+    <property name="id" value="whitespace-before-import"/>
     <property name="format" value="^[ ]+import "/>
     <property name="message" value="Whitespace before import statement"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Duplicate whitespace characters"/>
     <property name="severity" value="ignore"/>
+    <property name="id" value="duplicate-whitespace-characters"/>
     <property name="format" value="(?&lt;!MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.)(?&lt;!^\s+\*)(?&lt;=[^\s])\s{2,}(?=[^\s])"/>
     <property name="message" value="Duplicate whitespace characters"/>
     <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="{ on its own line"/>
+    <property name="id" value="single-left-curly-line"/>
     <property name="severity" value="ignore"/>
     <property name="format" value="^\s*\{"/>
     <property name="message" value="'{' on its own line"/>
