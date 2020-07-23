@@ -198,6 +198,7 @@
             <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle.xml</configLocation>
             <includeResources>true</includeResources>
             <includeTestResource>true</includeTestResource>
+            <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <violationSeverity>warning</violationSeverity>
             <failOnViolation>true</failOnViolation>
             <consoleOutput>true</consoleOutput>
