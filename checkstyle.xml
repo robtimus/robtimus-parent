@@ -324,7 +324,7 @@
   <!-- Don't require package, type or method Javadoc for test classes -->
   <module name="SuppressionSingleFilter">
     <property name="files" value="src[\\/]test[\\/]java[\\/].*"/>
-    <property name="checks" value="JavadocPackage|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod"/>
+    <property name="checks" value="JavadocPackage|JavadocVariable|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod"/>
   </module>
   <!-- Don't require a max length for resources -->
   <module name="SuppressionSingleFilter">
