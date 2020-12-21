@@ -75,10 +75,10 @@
 
     <version.java>1.8</version.java>
 
-    <version.checkstyle>8.37</version.checkstyle>
+    <version.checkstyle>8.38</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.7.0</version.junit>
-    <version.mockito>3.6.0</version.mockito>
+    <version.mockito>3.6.28</version.mockito>
     <version.slf4j>1.7.30</version.slf4j>
 
     <version.plugin.antrun>3.0.0</version.plugin.antrun>
