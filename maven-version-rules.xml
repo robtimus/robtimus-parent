@@ -66,11 +66,5 @@
         <ignoreVersion type="regex">.*.jre7</ignoreVersion>
       </ignoreVersions>
     </rule>
-    <rule comparisonMethod="maven" groupId="com.puppycrawl.tools" artifactId="checkstyle">
-      <ignoreVersions>
-        <!-- Ignore version 8.33 as there is no compatible Eclipse plugin yet -->
-        <ignoreVersion type="exact">8.33</ignoreVersion>
-      </ignoreVersions>
-    </rule>
   </rules>
 </ruleset>
