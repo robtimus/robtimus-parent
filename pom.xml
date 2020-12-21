@@ -43,10 +43,6 @@
     </developer>
   </developers>
 
-  <prerequisites>
-    <maven>3.6</maven>
-  </prerequisites>
-
   <scm>
     <connection>scm:git:git@github.com:robtimus/robtimus-parent.git</connection>
     <developerConnection>scm:git:git@github.com:robtimus/robtimus-parent.git</developerConnection>
@@ -89,6 +85,7 @@
     <version.plugin.compiler>3.8.1</version.plugin.compiler>
     <version.plugin.dependency>3.1.2</version.plugin.dependency>
     <version.plugin.deploy>2.8.2</version.plugin.deploy>
+    <version.plugin.enforcer>1.4.1</version.plugin.enforcer>
     <version.plugin.gpg>1.6</version.plugin.gpg>
     <version.plugin.nexus-staging>1.6.8</version.plugin.nexus-staging>
     <version.plugin.i18n>1.0</version.plugin.i18n>
@@ -221,6 +218,27 @@
               <goals>
                 <goal>check</goal>
               </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${version.plugin.enforcer}</version>
+          <executions>
+            <execution>
+              <id>enforce-maven-version</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>3.6</version>
+                  </requireMavenVersion>
+                </rules>
+              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -461,6 +479,12 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <inherited>true</inherited>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
