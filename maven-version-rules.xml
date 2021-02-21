@@ -54,6 +54,12 @@
         <ignoreVersion type="regex">.*-RC\d+</ignoreVersion>
       </ignoreVersions>
     </rule>
+    <rule comparisonMethod="maven" groupId="org.junit.vintage">
+      <ignoreVersions>
+        <ignoreVersion type="regex">.*-M\d+</ignoreVersion>
+        <ignoreVersion type="regex">.*-RC\d+</ignoreVersion>
+      </ignoreVersions>
+    </rule>
     <rule comparisonMethod="maven" groupId="org.mockito">
       <ignoreVersions>
         <ignoreVersion type="regex">.*-beta</ignoreVersion>
