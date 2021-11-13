@@ -328,7 +328,7 @@
               </goals>
               <configuration>
                 <target if="${robtimus.site-index.generate}">
-                  <concat destfile="${project.basedir}/src/site/markdown/index.md">
+                  <concat destfile="${project.basedir}/src/site/markdown/index.md" encoding="UTF-8" outputencoding="UTF-8">
                     <string xml:space="preserve"><![CDATA[<head>
   <title>${robtimus.site-index.title}</title>
 </head>
@@ -336,7 +336,7 @@
 ]]></string>
                     <fileset file="${project.basedir}/README.md" />
                   </concat>
-                  <replaceregexp file="${project.basedir}/src/site/markdown/index.md" match="${project.url}" replace="" flags="g" />
+                  <replaceregexp file="${project.basedir}/src/site/markdown/index.md" match="${project.url}" replace="" flags="g" encoding="UTF-8" />
                 </target>
               </configuration>
             </execution>
