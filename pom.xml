@@ -88,7 +88,7 @@
     <version.plugin.enforcer>1.4.1</version.plugin.enforcer>
     <version.plugin.gpg>1.6</version.plugin.gpg>
     <version.plugin.nexus-staging>1.6.8</version.plugin.nexus-staging>
-    <version.plugin.i18n>1.0</version.plugin.i18n>
+    <version.plugin.i18n>2.0</version.plugin.i18n>
     <version.plugin.info-reports>3.0.0</version.plugin.info-reports>
     <version.plugin.install>2.5.2</version.plugin.install>
     <version.plugin.jar>3.2.0</version.plugin.jar>
