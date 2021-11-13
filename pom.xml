@@ -71,7 +71,7 @@
 
     <version.java>1.8</version.java>
 
-    <version.checkstyle>8.41.1</version.checkstyle>
+    <version.checkstyle>9.1</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.7.2</version.junit>
     <version.mockito>3.11.1</version.mockito>
@@ -80,7 +80,7 @@
     <version.plugin.antrun>3.0.0</version.plugin.antrun>
     <version.plugin.assembly>3.3.0</version.plugin.assembly>
     <version.plugin.build-helper>3.1.0</version.plugin.build-helper>
-    <version.plugin.checkstyle>3.1.1</version.plugin.checkstyle>
+    <version.plugin.checkstyle>3.1.2</version.plugin.checkstyle>
     <version.plugin.clean>3.1.0</version.plugin.clean>
     <version.plugin.compiler>3.8.1</version.plugin.compiler>
     <version.plugin.dependency>3.1.2</version.plugin.dependency>
@@ -197,7 +197,7 @@
           <version>${version.plugin.checkstyle}</version>
           <configuration>
             <propertyExpansion>basedir=${project.basedir}</propertyExpansion>
-            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle.xml</configLocation>
+            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v2.xml</configLocation>
             <includeResources>true</includeResources>
             <includeTestResource>true</includeTestResource>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
