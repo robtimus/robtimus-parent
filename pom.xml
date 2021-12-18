@@ -74,7 +74,7 @@
     <version.checkstyle>9.2</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.8.2</version.junit>
-    <version.mockito>4.1.0</version.mockito>
+    <version.mockito>4.2.0</version.mockito>
     <version.slf4j>1.7.32</version.slf4j>
 
     <version.plugin.antrun>3.0.0</version.plugin.antrun>
