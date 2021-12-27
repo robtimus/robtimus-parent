@@ -332,6 +332,11 @@
     <property name="files" value="src[\\/](main|test)[\\/]resources[\\/].*"/>
     <property name="checks" value="LineLength"/>
   </module>
+  <!-- Disable all checks in generated code -->
+  <module name="SuppressionSingleFilter">
+    <property name="files" value="target[\\/](classes|generated-.*)[\\/].*"/>
+    <property name="checks" value=".*"/>
+  </module>
   <!-- Allow per-project custom suppressions -->
   <module name="SuppressionFilter">
     <property name="file" value="${basedir}/checkstyle_suppressions.xml"/>
