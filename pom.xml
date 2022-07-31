@@ -89,7 +89,7 @@
     <version.plugin.enforcer>3.1.0</version.plugin.enforcer>
     <version.plugin.gpg>3.0.1</version.plugin.gpg>
     <version.plugin.nexus-staging>1.6.13</version.plugin.nexus-staging>
-    <version.plugin.i18n>2.0</version.plugin.i18n>
+    <version.plugin.i18n>2.0.2</version.plugin.i18n>
     <version.plugin.install>3.0.0</version.plugin.install>
     <version.plugin.jar>3.2.2</version.plugin.jar>
     <!-- Don't use versions 3.3 or 3.4.0, see https://issues.apache.org/jira/browse/MJAVADOC-700 -->
