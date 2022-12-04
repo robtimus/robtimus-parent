@@ -74,24 +74,22 @@
     <!-- Note: 10.0 and up require Java 11 -->
     <version.checkstyle>9.3</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
-    <version.junit>5.9.0</version.junit>
-    <version.mockito>4.8.0</version.mockito>
-    <!-- Don't upgrade to version 2.x yet -->
-    <version.slf4j>1.7.36</version.slf4j>
+    <version.junit>5.9.1</version.junit>
+    <version.mockito>4.9.0</version.mockito>
 
     <version.plugin.antrun>3.1.0</version.plugin.antrun>
-    <version.plugin.assembly>3.4.1</version.plugin.assembly>
+    <version.plugin.assembly>3.4.2</version.plugin.assembly>
     <version.plugin.build-helper>3.3.0</version.plugin.build-helper>
     <version.plugin.checkstyle>3.2.0</version.plugin.checkstyle>
     <version.plugin.clean>3.2.0</version.plugin.clean>
     <version.plugin.compiler>3.10.1</version.plugin.compiler>
-    <version.plugin.dependency>3.3.0</version.plugin.dependency>
+    <version.plugin.dependency>3.4.0</version.plugin.dependency>
     <version.plugin.deploy>3.0.0</version.plugin.deploy>
     <version.plugin.enforcer>3.1.0</version.plugin.enforcer>
     <version.plugin.gpg>3.0.1</version.plugin.gpg>
     <version.plugin.nexus-staging>1.6.13</version.plugin.nexus-staging>
     <version.plugin.i18n>3.0</version.plugin.i18n>
-    <version.plugin.install>3.0.1</version.plugin.install>
+    <version.plugin.install>3.1.0</version.plugin.install>
     <version.plugin.jar>3.3.0</version.plugin.jar>
     <!-- Don't use versions 3.3 or 3.4.0, see https://issues.apache.org/jira/browse/MJAVADOC-700 -->
     <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
@@ -104,7 +102,7 @@
     <version.plugin.source>3.2.1</version.plugin.source>
     <version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
-    <version.plugin.versions>2.12.0</version.plugin.versions>
+    <version.plugin.versions>2.13.0</version.plugin.versions>
 
     <robtimus.site-index.generate>true</robtimus.site-index.generate>
     <robtimus.site-index.title>Overview</robtimus.site-index.title>
@@ -112,24 +110,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-nop</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-reload4j</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
