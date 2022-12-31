@@ -21,7 +21,7 @@
 
   <groupId>com.github.robtimus</groupId>
   <artifactId>robtimus-parent</artifactId>
-  <version>1.7</version>
+  <version>1.8-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>robtimus-parent</name>
@@ -46,7 +46,7 @@
   <scm>
     <connection>scm:git:git@github.com:robtimus/robtimus-parent.git</connection>
     <developerConnection>scm:git:git@github.com:robtimus/robtimus-parent.git</developerConnection>
-    <tag>1.7</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/robtimus/robtimus-parent</url>
   </scm>
 
