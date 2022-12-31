@@ -195,7 +195,7 @@
             <propertyExpansion>basedir=${project.basedir}</propertyExpansion>
             <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v2.xml</configLocation>
             <includeResources>true</includeResources>
-            <includeTestResource>true</includeTestResource>
+            <includeTestResources>true</includeTestResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <excludes>**/module-info.java</excludes>
             <violationSeverity>warning</violationSeverity>
