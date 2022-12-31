@@ -75,7 +75,7 @@
     <version.checkstyle>9.3</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.9.1</version.junit>
-    <version.mockito>4.9.0</version.mockito>
+    <version.mockito>4.11.0</version.mockito>
 
     <version.plugin.antrun>3.1.0</version.plugin.antrun>
     <version.plugin.assembly>3.4.2</version.plugin.assembly>
@@ -251,6 +251,54 @@
             <author>true</author>
             <version>true</version>
             <notimestamp>true</notimestamp>
+            <!--
+                Tags based on https://github.com/openjdk/jdk/blob/master/make/Docs.gmk
+                "version" added based on https://nipafx.dev/javadoc-tags-apiNote-implSpec-implNote/
+            -->
+            <tags>
+              <tag>
+                <name>apiNote</name>
+                <placement>a</placement>
+                <head>API Note:</head>
+              </tag>
+              <tag>
+                <name>implSpec</name>
+                <placement>a</placement>
+                <head>Implementation Requirements:</head>
+              </tag>
+              <tag>
+                <name>implNote</name>
+                <placement>a</placement>
+                <head>Implementation Note:</head>
+              </tag>
+              <tag>
+                <name>author</name>
+              </tag>
+              <tag>
+                <name>param</name>
+              </tag>
+              <tag>
+                <name>return</name>
+              </tag>
+              <tag>
+                <name>throws</name>
+              </tag>
+              <tag>
+                <name>since</name>
+              </tag>
+              <tag>
+                <name>version</name>
+              </tag>
+              <tag>
+                <name>serialData</name>
+              </tag>
+              <tag>
+                <name>factory</name>
+              </tag>
+              <tag>
+                <name>see</name>
+              </tag>
+            </tags>
           </configuration>
           <executions>
             <execution>
