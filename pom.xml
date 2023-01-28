@@ -101,6 +101,9 @@
     <version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
     <version.plugin.versions>2.13.0</version.plugin.versions>
+
+    <!-- Always define argLine so @{argLine} can always be used -->
+    <argLine />
   </properties>
 
   <dependencyManagement>
