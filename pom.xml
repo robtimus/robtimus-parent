@@ -71,8 +71,7 @@
 
     <version.java>1.8</version.java>
 
-    <!-- Note: 10.0 and up require Java 11 -->
-    <version.checkstyle>9.3</version.checkstyle>
+    <version.checkstyle>10.6.0</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.9.2</version.junit>
     <version.mockito>4.11.0</version.mockito>
@@ -91,15 +90,13 @@
     <version.plugin.i18n>3.0</version.plugin.i18n>
     <version.plugin.install>3.1.0</version.plugin.install>
     <version.plugin.jar>3.3.0</version.plugin.jar>
-    <!-- Don't use versions 3.3 or 3.4.0, see https://issues.apache.org/jira/browse/MJAVADOC-700 -->
-    <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
+    <version.plugin.javadoc>3.4.0</version.plugin.javadoc>
     <version.plugin.moditect>1.0.0.RC2</version.plugin.moditect>
     <version.plugin.project-info-reports>3.4.1</version.plugin.project-info-reports>
     <version.plugin.release>2.5.3</version.plugin.release>
     <version.plugin.robtimus-build-helper>1.0</version.plugin.robtimus-build-helper>
     <version.plugin.resources>3.3.0</version.plugin.resources>
-    <!-- Version 3.11 and up don't work with javadoc 3.2.0 -->
-    <version.plugin.site>3.10.0</version.plugin.site>
+    <version.plugin.site>3.12.0</version.plugin.site>
     <version.plugin.source>3.2.1</version.plugin.source>
     <version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
@@ -591,4 +588,34 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <profiles>
+    <profile>
+      <id>non-modular-javadoc</id>
+
+      <activation>
+        <jdk>(,9)</jdk>
+      </activation>
+
+      <properties>
+        <!-- Don't use versions 3.3 or 3.4.0, see https://issues.apache.org/jira/browse/MJAVADOC-700 -->
+        <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
+        <!-- Version 3.11 and up don't work with javadoc 3.2.0 -->
+        <version.plugin.site>3.10.0</version.plugin.site>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>pre-java-11</id>
+
+      <activation>
+        <jdk>(,11)</jdk>
+      </activation>
+
+      <properties>
+        <!-- Note: 10.0 and up require Java 11 -->
+        <version.checkstyle>9.3</version.checkstyle>
+      </properties>
+    </profile>
+  </profiles>
 </project>
