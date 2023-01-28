@@ -96,6 +96,7 @@
     <version.plugin.moditect>1.0.0.RC2</version.plugin.moditect>
     <version.plugin.project-info-reports>3.4.1</version.plugin.project-info-reports>
     <version.plugin.release>2.5.3</version.plugin.release>
+    <version.plugin.robtimus-build-helper>1.0</version.plugin.robtimus-build-helper>
     <version.plugin.resources>3.3.0</version.plugin.resources>
     <!-- Version 3.11 and up don't work with javadoc 3.2.0 -->
     <version.plugin.site>3.10.0</version.plugin.site>
@@ -103,9 +104,6 @@
     <version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
     <version.plugin.versions>2.13.0</version.plugin.versions>
-
-    <robtimus.site-index.generate>true</robtimus.site-index.generate>
-    <robtimus.site-index.title>Overview</robtimus.site-index.title>
   </properties>
 
   <dependencyManagement>
@@ -344,47 +342,39 @@
         </plugin>
 
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>${version.plugin.antrun}</version>
+          <groupId>com.github.robtimus</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${version.plugin.robtimus-build-helper}</version>
           <executions>
             <execution>
-              <id>copy-license</id>
-              <phase>generate-sources</phase>
+              <id>include-license</id>
               <goals>
-                <goal>run</goal>
+                <goal>jar-license</goal>
+                <goal>javadoc-license</goal>
               </goals>
-              <configuration>
-                <target>
-                  <copy todir="${project.build.directory}/apidocs/META-INF">
-                    <fileset dir="${project.basedir}">
-                      <include name="LICENSE.txt" />
-                    </fileset>
-                  </copy>
-                </target>
-              </configuration>
             </execution>
             <execution>
               <id>copy-readme</id>
-              <phase>pre-site</phase>
               <goals>
-                <goal>run</goal>
+                <goal>site-index</goal>
               </goals>
               <configuration>
-                <target if="${robtimus.site-index.generate}">
-                  <concat destfile="${project.basedir}/src/site/markdown/index.md" encoding="UTF-8" outputencoding="UTF-8">
-                    <string xml:space="preserve"><![CDATA[<head>
-  <title>${robtimus.site-index.title}</title>
-</head>
-
-]]></string>
-                    <fileset file="${project.basedir}/README.md" />
-                  </concat>
-                  <replaceregexp file="${project.basedir}/src/site/markdown/index.md" match="${project.url}" replace="" flags="g" encoding="UTF-8" />
-                </target>
+                <badgePatterns>
+                  <badgePattern>https://github.com/.*/badge.svg</badgePattern>
+                  <badgePattern>https://img.shields.io/.*?</badgePattern>
+                  <badgePattern>https://badgen.net/.*</badgePattern>
+                  <badgePattern>https://snyk.io/test/.*/badge.svg</badgePattern>
+                  <badgePattern>https://sonarcloud.io/api/project_badges/.*</badgePattern>
+                </badgePatterns>
               </configuration>
             </execution>
           </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${version.plugin.antrun}</version>
         </plugin>
 
         <plugin>
