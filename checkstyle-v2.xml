@@ -275,7 +275,7 @@
     <metadata name="net.sf.eclipsecs.core.comment" value="Empty line after line equaling {, ( or ["/>
     <property name="id" value="empty-line-after-single-opening-character"/>
     <property name="format" value="\r?\n[\s&amp;&amp;[^\r\n]]*[{(\[]\r?\n\r?\n"/>
-    <property name="message" value="Empty line after line equaling {, ( or ["/>
+    <property name="message" value="Empty line after line equaling '{', ( or ["/>
   </module>
   <module name="RegexpMultiline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Empty line before line equaling }, ) or ]"/>
