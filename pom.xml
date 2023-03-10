@@ -71,36 +71,36 @@
 
     <version.java>1.8</version.java>
 
-    <version.checkstyle>10.6.0</version.checkstyle>
+    <version.checkstyle>10.8.1</version.checkstyle>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.9.2</version.junit>
-    <version.mockito>4.11.0</version.mockito>
+    <version.mockito>5.1.1</version.mockito>
 
     <version.plugin.antrun>3.1.0</version.plugin.antrun>
-    <version.plugin.assembly>3.4.2</version.plugin.assembly>
+    <version.plugin.assembly>3.5.0</version.plugin.assembly>
     <version.plugin.build-helper>3.3.0</version.plugin.build-helper>
-    <version.plugin.checkstyle>3.2.0</version.plugin.checkstyle>
+    <version.plugin.checkstyle>3.2.1</version.plugin.checkstyle>
     <version.plugin.clean>3.2.0</version.plugin.clean>
-    <version.plugin.compiler>3.10.1</version.plugin.compiler>
-    <version.plugin.dependency>3.4.0</version.plugin.dependency>
-    <version.plugin.deploy>3.0.0</version.plugin.deploy>
-    <version.plugin.enforcer>3.1.0</version.plugin.enforcer>
+    <version.plugin.compiler>3.11.0</version.plugin.compiler>
+    <version.plugin.dependency>3.5.0</version.plugin.dependency>
+    <version.plugin.deploy>3.1.0</version.plugin.deploy>
+    <version.plugin.enforcer>3.2.1</version.plugin.enforcer>
     <version.plugin.gpg>3.0.1</version.plugin.gpg>
     <version.plugin.nexus-staging>1.6.13</version.plugin.nexus-staging>
     <version.plugin.i18n>3.0</version.plugin.i18n>
     <version.plugin.install>3.1.0</version.plugin.install>
     <version.plugin.jar>3.3.0</version.plugin.jar>
-    <version.plugin.javadoc>3.4.0</version.plugin.javadoc>
-    <version.plugin.moditect>1.0.0.RC2</version.plugin.moditect>
-    <version.plugin.project-info-reports>3.4.1</version.plugin.project-info-reports>
+    <version.plugin.javadoc>3.5.0</version.plugin.javadoc>
+    <version.plugin.moditect>1.0.0.RC3</version.plugin.moditect>
+    <version.plugin.project-info-reports>3.4.2</version.plugin.project-info-reports>
     <version.plugin.release>2.5.3</version.plugin.release>
     <version.plugin.robtimus-build-helper>1.0</version.plugin.robtimus-build-helper>
     <version.plugin.resources>3.3.0</version.plugin.resources>
-    <version.plugin.site>3.12.0</version.plugin.site>
+    <version.plugin.site>3.12.1</version.plugin.site>
     <version.plugin.source>3.2.1</version.plugin.source>
-    <version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
+    <version.plugin.surefire>3.0.0-M9</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
-    <version.plugin.versions>2.13.0</version.plugin.versions>
+    <version.plugin.versions>2.15.0</version.plugin.versions>
 
     <!-- Always define argLine so @{argLine} can always be used -->
     <argLine />
@@ -594,21 +594,6 @@
 
   <profiles>
     <profile>
-      <id>non-modular-javadoc</id>
-
-      <activation>
-        <jdk>(,9)</jdk>
-      </activation>
-
-      <properties>
-        <!-- Don't use versions 3.3 or 3.4.0, see https://issues.apache.org/jira/browse/MJAVADOC-700 -->
-        <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
-        <!-- Version 3.11 and up don't work with javadoc 3.2.0 -->
-        <version.plugin.site>3.10.0</version.plugin.site>
-      </properties>
-    </profile>
-
-    <profile>
       <id>pre-java-11</id>
 
       <activation>
@@ -618,6 +603,8 @@
       <properties>
         <!-- Note: 10.0 and up require Java 11 -->
         <version.checkstyle>9.3</version.checkstyle>
+        <!-- Note: 5.0.0 and up require Java 11 -->
+        <version.mockito>4.11.0</version.mockito>
       </properties>
     </profile>
   </profiles>
