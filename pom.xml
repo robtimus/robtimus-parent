@@ -71,10 +71,11 @@
 
     <version.java>1.8</version.java>
 
-    <version.checkstyle>10.8.1</version.checkstyle>
+    <version.checkstyle>10.9.1</version.checkstyle>
+    <version.checkstyle-extension>1.0</version.checkstyle-extension>
     <version.hamcrest>2.2</version.hamcrest>
     <version.junit>5.9.2</version.junit>
-    <version.mockito>5.1.1</version.mockito>
+    <version.mockito>5.2.0</version.mockito>
 
     <version.plugin.antrun>3.1.0</version.plugin.antrun>
     <version.plugin.assembly>3.5.0</version.plugin.assembly>
@@ -94,11 +95,11 @@
     <version.plugin.moditect>1.0.0.RC3</version.plugin.moditect>
     <version.plugin.project-info-reports>3.4.2</version.plugin.project-info-reports>
     <version.plugin.release>2.5.3</version.plugin.release>
-    <version.plugin.robtimus-build-helper>1.0</version.plugin.robtimus-build-helper>
+    <version.plugin.robtimus-build-helper>1.1</version.plugin.robtimus-build-helper>
     <version.plugin.resources>3.3.0</version.plugin.resources>
     <version.plugin.site>3.12.1</version.plugin.site>
     <version.plugin.source>3.2.1</version.plugin.source>
-    <version.plugin.surefire>3.0.0-M9</version.plugin.surefire>
+    <version.plugin.surefire>3.0.0</version.plugin.surefire>
     <version.plugin.templating>1.0.0</version.plugin.templating>
     <version.plugin.versions>2.15.0</version.plugin.versions>
 
@@ -191,7 +192,7 @@
           <version>${version.plugin.checkstyle}</version>
           <configuration>
             <propertyExpansion>basedir=${project.basedir}</propertyExpansion>
-            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v2.xml</configLocation>
+            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v3.xml</configLocation>
             <includeResources>true</includeResources>
             <includeTestResources>true</includeTestResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
@@ -205,6 +206,11 @@
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
               <version>${version.checkstyle}</version>
+            </dependency>
+            <dependency>
+              <groupId>com.github.robtimus</groupId>
+              <artifactId>checkstyle-extension</artifactId>
+              <version>${version.checkstyle-extension}</version>
             </dependency>
           </dependencies>
           <executions>
