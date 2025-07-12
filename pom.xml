@@ -445,6 +445,7 @@
           <configuration>
             <publishingServerId>central</publishingServerId>
             <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
+            <deploymentName>${project.artifactId}-${project.version}</deploymentName>
             <autoPublish>true</autoPublish>
             <waitUntil>published</waitUntil>
           </configuration>
