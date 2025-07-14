@@ -106,7 +106,6 @@
     <module name="UnnecessarySemicolonAfterTypeMemberDeclaration"/>
     <module name="UnnecessarySemicolonInEnumeration"/>
     <module name="UnnecessarySemicolonInTryWithResources"/>
-    <module name="UnusedLocalVariable"/>
 
     <!-- Imports -->
     <module name="AvoidStarImport"/>
