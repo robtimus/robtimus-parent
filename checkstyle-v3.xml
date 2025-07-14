@@ -33,6 +33,7 @@
     <module name="MissingOverride"/>
     <module name="PackageAnnotation"/>
     <module name="SuppressWarnings"/>
+    <module name="SuppressWarningsHolder"/>
 
     <!-- Block Checks -->
     <module name="AvoidNestedBlocks"/>
@@ -299,6 +300,8 @@
   <module name="NoTrailingWhitespace"/>
   <module name="NoBlankLineAfterSymbols"/>
   <module name="NoBlankLineBeforeSymbols"/>
+
+  <module name="SuppressWarningsFilter" />
 
   <!-- Don't require package, type or method Javadoc for test classes -->
   <module name="SuppressionSingleFilter">

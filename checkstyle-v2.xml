@@ -30,6 +30,7 @@
     <module name="MissingOverride"/>
     <module name="PackageAnnotation"/>
     <module name="SuppressWarnings"/>
+    <module name="SuppressWarningsHolder"/>
 
     <!-- Block Checks -->
     <module name="AvoidNestedBlocks"/>
@@ -329,6 +330,8 @@
     <property name="message" value="'{' on its own line"/>
     <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
   </module>
+
+  <module name="SuppressWarningsFilter" />
 
   <!-- Don't require package, type or method Javadoc for test classes -->
   <module name="SuppressionSingleFilter">
