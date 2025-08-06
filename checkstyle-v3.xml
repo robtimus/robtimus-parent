@@ -17,7 +17,7 @@
 -->
 
 <!--
-  This configuration file is compatible with CheckStyle 9.3 and up.
+  This configuration file is compatible with CheckStyle 9.3 to 10.21.4.
   It requires com.github.robtimus:checkstyle-extension:1.0 or up
 -->
 <module name="Checker">

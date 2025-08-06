@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
 <!--
-  Copyright 2021 Rob Spoor
+  Copyright 2023 Rob Spoor
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -16,7 +16,10 @@
   limitations under the License.
 -->
 
-<!-- This configuration file is compatible with CheckStyle 8.44 to 10.21.4 -->
+<!--
+  This configuration file is compatible with CheckStyle 10.22.0 and up.
+  It requires com.github.robtimus:checkstyle-extension:1.0 or up
+-->
 <module name="Checker">
   <property name="severity" value="warning"/>
   <module name="TreeWalker">
@@ -61,6 +64,9 @@
     <module name="ArrayTrailingComma"/>
     <module name="AvoidDoubleBraceInitialization"/>
     <module name="CovariantEquals"/>
+    <module name="DeclarationOrder">
+      <property name="ignoreModifiers" value="true"/>
+    </module>
     <module name="DefaultComesLast"/>
     <module name="EmptyStatement"/>
     <module name="EqualsAvoidNull"/>
@@ -86,7 +92,9 @@
       <property name="max" value="3"/>
     </module>
     <module name="NoFinalizer"/>
-    <module name="OneStatementPerLine"/>
+    <module name="OneStatementPerLine">
+      <property name="treatTryResourcesAsStatement" value="true"/>
+    </module>
     <module name="PackageDeclaration"/>
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
@@ -104,6 +112,14 @@
     <module name="IllegalImport">
       <property name="illegalPkgs" value="sun, sunw, com.oracle, com.sun"/>
     </module>
+    <module name="ImportOrder">
+      <property name="option" value="top"/>
+      <property name="groups" value="java,javax,jakarta,org,com,nl"/>
+      <property name="separated" value="false"/>
+      <property name="ordered" value="true"/>
+      <property name="separatedStaticGroups" value="false"/>
+      <property name="sortStaticImportsAlphabetically" value="true"/>
+    </module>
     <module name="RedundantImport"/>
     <module name="UnusedImports"/>
 
@@ -111,25 +127,38 @@
     <module name="AtclauseOrder"/>
     <module name="InvalidJavadocPosition"/>
     <module name="JavadocBlockTagLocation"/>
+    <module name="JavadocContentLocation"/>
     <module name="JavadocMethod">
-      <property name="id" value="default"/>
+      <property name="id" value="JavadocMethod"/>
       <property name="accessModifiers" value="public,protected"/>
       <property name="tokens" value="METHOD_DEF,CTOR_DEF,COMPACT_CTOR_DEF"/>
     </module>
     <module name="JavadocMethod">
-      <property name="id" value="annotations"/>
+      <property name="id" value="AnnotationsJavadocMethod"/>
       <property name="accessModifiers" value="public,protected"/>
       <property name="allowMissingReturnTag" value="true"/>
       <property name="tokens" value="ANNOTATION_FIELD_DEF"/>
     </module>
     <module name="JavadocMissingLeadingAsterisk"/>
     <module name="JavadocMissingWhitespaceAfterAsterisk"/>
-    <module name="JavadocStyle"/>
+    <module name="JavadocStyle">
+      <property name="id" value="VisibleJavadocStyle"/>
+      <property name="scope" value="protected"/>
+      <property name="checkEmptyJavadoc" value="true"/>
+    </module>
+    <module name="JavadocStyle">
+      <property name="id" value="InvisibleJavadocStyle"/>
+      <property name="scope" value="private"/>
+    </module>
     <module name="JavadocType">
       <property name="excludeScope" value="anoninner"/>
       <property name="authorFormat" value="^.+ .+$"/>
+      <property name="versionFormat" value="^\d+\.\d+"/>
     </module>
     <module name="JavadocVariable">
+      <property name="accessModifiers" value="public,protected"/>
+    </module>
+    <module name="MissingJavadocMethod">
       <property name="scope" value="protected"/>
     </module>
     <module name="MissingJavadocPackage"/>
@@ -205,10 +234,9 @@
     </module>
     <module name="NoWhitespaceBefore">
       <property name="allowLineBreaks" value="true"/>
-      <property name="tokens" value="COMMA,SEMI,POST_INC,POST_DEC,DOT,GENERIC_END,ELLIPSIS,METHOD_REF,LABELED_STAT"/>
+      <property name="tokens" value="COMMA,SEMI,POST_INC,POST_DEC,DOT,GENERIC_END,ELLIPSIS,LABELED_STAT,METHOD_REF"/>
     </module>
-    <!-- Not available yet in Eclipse -->
-    <!--<module name="NoWhitespaceBeforeCaseDefaultColon"/> -->
+    <module name="NoWhitespaceBeforeCaseDefaultColon"/>
     <module name="OperatorWrap">
       <property name="tokens" value="QUESTION,COLON,EQUAL,NOT_EQUAL,DIV,PLUS,MINUS,STAR,MOD,SR,BSR,GE,GT,SL,LE,LT,BXOR,BOR,LOR,BAND,LAND,LITERAL_INSTANCEOF,TYPE_EXTENSION_AND,ASSIGN,DIV_ASSIGN,PLUS_ASSIGN,MINUS_ASSIGN,STAR_ASSIGN,MOD_ASSIGN,SR_ASSIGN,BSR_ASSIGN,SL_ASSIGN,BXOR_ASSIGN,BOR_ASSIGN,BAND_ASSIGN,METHOD_REF"/>
     </module>
@@ -232,13 +260,6 @@
     </module>
   </module>
 
-    <!-- Headers -->
-  <module name="RegexpHeader">
-    <property name="id" value="Apache"/>
-    <property name="header" value="^/\*$\n^ \* (([A-Z][a-zA-Z0-9]+)|package-info)\.java$\n^ \* Copyright \d{4}(-\d{4})? .+ .+$\n^ \*$\n^ \* Licensed under the Apache License, Version 2\.0 \(the &quot;License&quot;\);$\n^ \* you may not use this file except in compliance with the License\.$\n^ \* You may obtain a copy of the License at$\n^ \*$\n^ \*     http://www\.apache\.org/licenses/LICENSE-2\.0$\n^ \*$\n^ \* Unless required by applicable law or agreed to in writing, software$\n^ \* distributed under the License is distributed on an &quot;AS IS&quot; BASIS,$\n^ \* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied\.$\n^ \* See the License for the specific language governing permissions and$\n^ \* limitations under the License\.$\n^ \*/$\n"/>
-    <property name="fileExtensions" value="java"/>
-  </module>
-
   <!-- Javadoc Comments -->
   <module name="JavadocPackage"/>
 
@@ -259,84 +280,24 @@
     <property name="eachLine" value="true"/>
   </module>
 
-  <!-- Regexes -->
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Two or more empty lines in a row"/>
-    <property name="id" value="two-or-more-empty-lines-in-a-row"/>
-    <property name="format" value="^(\r?\n){2,}"/>
-    <property name="message" value="Two or more empty lines in a row"/>
+  <!-- from com.github.robtimus:checkstyle-extension -->
+  <module name="LicenseComment">
+    <property name="includeFilename" value="true"/>
+    <property name="includeCopyright" value="true"/>
+    <property name="includeEmptyLineBeforeLicenseText" value="true"/>
+    <property name="predefinedLicenseText" value="Apache-2.0"/>
   </module>
-  <module name="RegexpSingleline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Line ending in whitespace"/>
-    <property name="id" value="line-ending-in-whitespace"/>
-    <property name="format" value="\s+$"/>
-    <property name="message" value="Line ending in whitespace"/>
-  </module>
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Empty line after line equaling {, ( or ["/>
-    <property name="id" value="empty-line-after-single-opening-character"/>
-    <property name="format" value="\r?\n[\s&amp;&amp;[^\r\n]]*[{(\[]\r?\n\r?\n"/>
-    <property name="message" value="Empty line after line equaling '{', ( or ["/>
-  </module>
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Empty line before line equaling }, ) or ]"/>
-    <property name="id" value="empty-line-before-single-closing-character"/>
-    <property name="format" value="^\r?\n\s*[})\]]\r?\n"/>
-    <property name="message" value="Empty line before line equaling }, ) or ]"/>
-  </module>
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Empty line between imports"/>
-    <property name="id" value="empty-line-between-imports"/>
-    <property name="format" value="import .*;\r?\n\r?\nimport "/>
-    <property name="message" value="Empty line between imports"/>
-  </module>
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Missing empty line after package statement"/>
-    <property name="id" value="missing-empty-line-after-package"/>
-    <property name="format" value="^package .*;\r?\n(?!(\r?\n)|$)"/>
-    <property name="message" value="Missing empty line after package statement"/>
-  </module>
-  <module name="RegexpMultiline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Missing empty line after imports"/>
-    <property name="id" value="missing-empty-line-after-imports"/>
-    <property name="format" value="^import .*;\r?\n(?!(\r?\n)|\s*import |$)"/>
-    <property name="message" value="Missing empty line after imports"/>
-  </module>
-  <module name="RegexpSingleline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Whitespace before package statement"/>
-    <property name="id" value="whitespace-before-package"/>
-    <property name="format" value="^[ ]+package "/>
-    <property name="message" value="Whitespace before package statement"/>
-  </module>
-  <module name="RegexpSingleline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Whitespace before import statement"/>
-    <property name="id" value="whitespace-before-import"/>
-    <property name="format" value="^[ ]+import "/>
-    <property name="message" value="Whitespace before import statement"/>
-  </module>
-  <module name="RegexpSingleline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="Duplicate whitespace characters"/>
-    <property name="severity" value="ignore"/>
-    <property name="id" value="duplicate-whitespace-characters"/>
-    <property name="format" value="(?&lt;!MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.)(?&lt;!^\s+\*)(?&lt;=[^\s])\s{2,}(?=[^\s])"/>
-    <property name="message" value="Duplicate whitespace characters"/>
-    <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
-  </module>
-  <module name="RegexpSingleline">
-    <metadata name="net.sf.eclipsecs.core.comment" value="{ on its own line"/>
-    <property name="id" value="single-left-curly-line"/>
-    <property name="severity" value="ignore"/>
-    <property name="format" value="^\s*\{"/>
-    <property name="message" value="'{' on its own line"/>
-    <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
-  </module>
+  <module name="NoSubsequentBlankLines"/>
+  <module name="NoTrailingWhitespace"/>
+  <module name="NoBlankLineAfterSymbols"/>
+  <module name="NoBlankLineBeforeSymbols"/>
 
   <module name="SuppressWarningsFilter" />
 
   <!-- Don't require package, type or method Javadoc for test classes -->
   <module name="SuppressionSingleFilter">
     <property name="files" value="src[\\/]test[\\/]java[\\/].*"/>
-    <property name="checks" value="JavadocPackage|JavadocVariable|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod"/>
+    <property name="checks" value="JavadocPackage|JavadocStyle|JavadocVariable|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod"/>
   </module>
   <!-- Don't require a max length for resources -->
   <module name="SuppressionSingleFilter">
