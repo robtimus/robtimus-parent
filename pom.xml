@@ -60,10 +60,10 @@
 
     <version.java>1.8</version.java>
 
-    <version.checkstyle>10.21.4</version.checkstyle>
+    <version.checkstyle>11.0.0</version.checkstyle>
     <version.checkstyle-extension>1.0</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
-    <version.junit>5.13.3</version.junit>
+    <version.junit>5.13.4</version.junit>
     <version.mockito>5.18.0</version.mockito>
 
     <version.plugin.antrun>3.1.0</version.plugin.antrun>
@@ -73,7 +73,7 @@
     <version.plugin.compiler>3.14.0</version.plugin.compiler>
     <version.plugin.dependency>3.8.1</version.plugin.dependency>
     <version.plugin.deploy>3.1.4</version.plugin.deploy>
-    <version.plugin.enforcer>3.6.0</version.plugin.enforcer>
+    <version.plugin.enforcer>3.6.1</version.plugin.enforcer>
     <version.plugin.gpg>3.2.8</version.plugin.gpg>
     <version.plugin.install>3.1.4</version.plugin.install>
     <version.plugin.jar>3.4.2</version.plugin.jar>
@@ -182,7 +182,7 @@
           <version>${version.plugin.checkstyle}</version>
           <configuration>
             <propertyExpansion>basedir=${project.basedir}</propertyExpansion>
-            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v3.xml</configLocation>
+            <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v4.xml</configLocation>
             <includeResources>true</includeResources>
             <includeTestResources>true</includeTestResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
@@ -226,7 +226,7 @@
               <configuration>
                 <rules>
                   <requireMavenVersion>
-                    <version>3.8.2</version>
+                    <version>3.9.5</version>
                   </requireMavenVersion>
                 </rules>
               </configuration>
@@ -595,16 +595,55 @@
 
   <profiles>
     <profile>
-      <id>pre-java-11</id>
+      <id>pre-java-11-checkstyle</id>
 
       <activation>
         <jdk>(,11)</jdk>
       </activation>
 
       <properties>
-        <!-- Note: 10.0 and up require Java 11 -->
+        <!-- 10.0 and up require Java 11 -->
         <version.checkstyle>9.3</version.checkstyle>
-        <!-- Note: 5.0.0 and up require Java 11 -->
+      </properties>
+
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-checkstyle-plugin</artifactId>
+              <configuration>
+                <!-- v4 and up require at least Checkstyle 10.22.0 -->
+                <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v3.xml</configLocation>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+
+    <profile>
+      <id>pre-java-17-checkstyle</id>
+
+      <activation>
+        <jdk>[11,17)</jdk>
+      </activation>
+
+      <properties>
+        <!-- 11.0 and up require Java 17 -->
+        <version.checkstyle>10.26.1</version.checkstyle>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>pre-java-11-mockito</id>
+
+      <activation>
+        <jdk>(,11)</jdk>
+      </activation>
+
+      <properties>
+        <!-- 5.0.0 and up require Java 11 -->
         <version.mockito>4.11.0</version.mockito>
       </properties>
     </profile>
