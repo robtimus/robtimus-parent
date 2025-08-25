@@ -21,7 +21,7 @@
 
   <groupId>com.github.robtimus</groupId>
   <artifactId>robtimus-parent</artifactId>
-  <version>1.19-SNAPSHOT</version>
+  <version>2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>robtimus-parent</name>
@@ -58,8 +58,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <version.java>1.8</version.java>
-
     <version.checkstyle>11.0.0</version.checkstyle>
     <version.checkstyle-extension>1.0.1</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
@@ -88,7 +86,6 @@
     <version.plugin.build-helper>3.6.1</version.plugin.build-helper>
     <version.plugin.central-publishing>0.8.0</version.plugin.central-publishing>
     <version.plugin.i18n>3.1.1</version.plugin.i18n>
-    <version.plugin.moditect>1.2.2.Final</version.plugin.moditect>
     <version.plugin.robtimus-build-helper>1.2.1</version.plugin.robtimus-build-helper>
     <version.plugin.templating>3.0.0</version.plugin.templating>
     <version.plugin.versions>2.18.0</version.plugin.versions>
@@ -133,8 +130,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${version.plugin.compiler}</version>
           <configuration>
-            <source>${version.java}</source>
-            <target>${version.java}</target>
+            <release>${version.java}</release>
           </configuration>
         </plugin>
 
@@ -317,27 +313,6 @@
           <groupId>com.github.robtimus</groupId>
           <artifactId>i18n-maven-plugin</artifactId>
           <version>${version.plugin.i18n}</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.moditect</groupId>
-          <artifactId>moditect-maven-plugin</artifactId>
-          <version>${version.plugin.moditect}</version>
-          <executions>
-            <execution>
-              <id>add-module-info</id>
-              <phase>package</phase>
-              <goals>
-                <goal>add-module-info</goal>
-              </goals>
-              <configuration>
-                <overwriteExistingFiles>true</overwriteExistingFiles>
-                <module>
-                  <moduleInfoFile>${project.basedir}/src/moditect/module-info.java</moduleInfoFile>
-                </module>
-              </configuration>
-            </execution>
-          </executions>
         </plugin>
 
         <plugin>
@@ -595,34 +570,6 @@
 
   <profiles>
     <profile>
-      <id>pre-java-11-checkstyle</id>
-
-      <activation>
-        <jdk>(,11)</jdk>
-      </activation>
-
-      <properties>
-        <!-- 10.0 and up require Java 11 -->
-        <version.checkstyle>9.3</version.checkstyle>
-      </properties>
-
-      <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-              <configuration>
-                <!-- v4 and up require at least Checkstyle 10.22.0 -->
-                <configLocation>https://raw.githubusercontent.com/robtimus/robtimus-parent/master/checkstyle-v3.xml</configLocation>
-              </configuration>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-      </build>
-    </profile>
-
-    <profile>
       <id>pre-java-17-checkstyle</id>
 
       <activation>
@@ -632,19 +579,6 @@
       <properties>
         <!-- 11.0 and up require Java 17 -->
         <version.checkstyle>10.26.1</version.checkstyle>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>pre-java-11-mockito</id>
-
-      <activation>
-        <jdk>(,11)</jdk>
-      </activation>
-
-      <properties>
-        <!-- 5.0.0 and up require Java 11 -->
-        <version.mockito>4.11.0</version.mockito>
       </properties>
     </profile>
   </profiles>
