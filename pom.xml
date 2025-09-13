@@ -58,6 +58,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+    <version.java>11</version.java>
+
     <version.checkstyle>11.0.1</version.checkstyle>
     <version.checkstyle-extension>1.0.1</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
