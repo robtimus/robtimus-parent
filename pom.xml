@@ -60,10 +60,10 @@
 
     <version.java>11</version.java>
 
-    <version.checkstyle>12.3.0</version.checkstyle>
+    <version.checkstyle>13.1.0</version.checkstyle>
     <version.checkstyle-extension>1.0.1</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
-    <version.junit>5.14.1</version.junit>
+    <version.junit>5.14.2</version.junit>
     <version.mockito>5.21.0</version.mockito>
 
     <version.plugin.antrun>3.2.0</version.plugin.antrun>
@@ -86,11 +86,11 @@
     <version.plugin.surefire>3.5.4</version.plugin.surefire>
 
     <version.plugin.build-helper>3.6.1</version.plugin.build-helper>
-    <version.plugin.central-publishing>0.9.0</version.plugin.central-publishing>
+    <version.plugin.central-publishing>0.10.0</version.plugin.central-publishing>
     <version.plugin.i18n>3.1.2</version.plugin.i18n>
-    <version.plugin.robtimus-build-helper>1.2.1</version.plugin.robtimus-build-helper>
-    <version.plugin.templating>3.0.0</version.plugin.templating>
-    <version.plugin.versions>2.20.1</version.plugin.versions>
+    <version.plugin.robtimus-build-helper>2.0</version.plugin.robtimus-build-helper>
+    <version.plugin.templating>3.1.0</version.plugin.templating>
+    <version.plugin.versions>2.21.0</version.plugin.versions>
 
     <!-- Always define argLine so @{argLine} can always be used -->
     <argLine />
@@ -344,6 +344,17 @@
                 </badgePatterns>
               </configuration>
             </execution>
+            <execution>
+              <id>fix-site-anchors</id>
+              <goals>
+                <goal>fix-site-anchors</goal>
+              </goals>
+              <configuration>
+                <files>
+                  <file>${project.build.directory}/site/index.html</file>
+                </files>
+              </configuration>
+            </execution>
           </executions>
         </plugin>
 
@@ -581,6 +592,19 @@
       <properties>
         <!-- 11.0 and up require Java 17 -->
         <version.checkstyle>10.26.1</version.checkstyle>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>pre-java-21-checkstyle</id>
+
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+
+      <properties>
+        <!-- 13.0 and up require Java 21 -->
+        <version.checkstyle>12.3.1</version.checkstyle>
       </properties>
     </profile>
   </profiles>
