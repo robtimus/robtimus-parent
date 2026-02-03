@@ -70,7 +70,7 @@
     <version.plugin.assembly>3.8.0</version.plugin.assembly>
     <version.plugin.checkstyle>3.6.0</version.plugin.checkstyle>
     <version.plugin.clean>3.5.0</version.plugin.clean>
-    <version.plugin.compiler>3.14.1</version.plugin.compiler>
+    <version.plugin.compiler>3.15.0</version.plugin.compiler>
     <version.plugin.dependency>3.9.0</version.plugin.dependency>
     <version.plugin.deploy>3.1.4</version.plugin.deploy>
     <version.plugin.enforcer>3.6.2</version.plugin.enforcer>
