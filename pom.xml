@@ -60,18 +60,18 @@
 
     <version.java>11</version.java>
 
-    <version.checkstyle>13.1.0</version.checkstyle>
+    <version.checkstyle>13.4.0</version.checkstyle>
     <version.checkstyle-extension>1.0.1</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
-    <version.junit>5.14.2</version.junit>
-    <version.mockito>5.21.0</version.mockito>
+    <version.junit>5.14.3</version.junit>
+    <version.mockito>5.23.0</version.mockito>
 
     <version.plugin.antrun>3.2.0</version.plugin.antrun>
     <version.plugin.assembly>3.8.0</version.plugin.assembly>
     <version.plugin.checkstyle>3.6.0</version.plugin.checkstyle>
     <version.plugin.clean>3.5.0</version.plugin.clean>
     <version.plugin.compiler>3.15.0</version.plugin.compiler>
-    <version.plugin.dependency>3.9.0</version.plugin.dependency>
+    <version.plugin.dependency>3.10.0</version.plugin.dependency>
     <version.plugin.deploy>3.1.4</version.plugin.deploy>
     <version.plugin.enforcer>3.6.2</version.plugin.enforcer>
     <version.plugin.gpg>3.2.8</version.plugin.gpg>
@@ -80,10 +80,10 @@
     <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
     <version.plugin.project-info-reports>3.9.0</version.plugin.project-info-reports>
     <version.plugin.release>3.3.1</version.plugin.release>
-    <version.plugin.resources>3.4.0</version.plugin.resources>
+    <version.plugin.resources>3.5.0</version.plugin.resources>
     <version.plugin.site>3.21.0</version.plugin.site>
     <version.plugin.source>3.4.0</version.plugin.source>
-    <version.plugin.surefire>3.5.4</version.plugin.surefire>
+    <version.plugin.surefire>3.5.5</version.plugin.surefire>
 
     <version.plugin.build-helper>3.6.1</version.plugin.build-helper>
     <version.plugin.central-publishing>0.10.0</version.plugin.central-publishing>
@@ -224,7 +224,7 @@
               <configuration>
                 <rules>
                   <requireMavenVersion>
-                    <version>3.9.5</version>
+                    <version>3.9.8</version>
                   </requireMavenVersion>
                 </rules>
               </configuration>
