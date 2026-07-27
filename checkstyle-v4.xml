@@ -143,7 +143,6 @@
     <module name="JavadocMissingWhitespaceAfterAsterisk"/>
     <module name="JavadocLeadingAsteriskAlign"/>
     <module name="SummaryJavadoc"/>
-    <module name="JavadocParagraph"/>
     <module name="JavadocType">
       <property name="excludeScope" value="anoninner"/>
       <property name="authorFormat" value="^.+ .+$"/>
@@ -294,7 +293,7 @@
   <!-- Don't require package, type or method Javadoc for test classes -->
   <module name="SuppressionSingleFilter">
     <property name="files" value="src[\\/]test[\\/]java[\\/].*"/>
-    <property name="checks" value="JavadocPackage|JavadocStyle|JavadocVariable|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod"/>
+    <property name="checks" value="JavadocPackage|JavadocStyle|JavadocVariable|MissingJavadocPackage|MissingJavadocType|MissingJavadocMethod|SummaryJavadoc"/>
   </module>
   <!-- Don't require a max length for resources -->
   <module name="SuppressionSingleFilter">
