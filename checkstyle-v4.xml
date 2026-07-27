@@ -141,7 +141,9 @@
     </module>
     <module name="JavadocMissingLeadingAsterisk"/>
     <module name="JavadocMissingWhitespaceAfterAsterisk"/>
+    <module name="JavadocLeadingAsteriskAlign"/>
     <module name="SummaryJavadoc"/>
+    <module name="JavadocParagraph"/>
     <module name="JavadocType">
       <property name="excludeScope" value="anoninner"/>
       <property name="authorFormat" value="^.+ .+$"/>
