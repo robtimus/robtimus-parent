@@ -141,15 +141,7 @@
     </module>
     <module name="JavadocMissingLeadingAsterisk"/>
     <module name="JavadocMissingWhitespaceAfterAsterisk"/>
-    <module name="JavadocStyle">
-      <property name="id" value="VisibleJavadocStyle"/>
-      <property name="scope" value="protected"/>
-      <property name="checkEmptyJavadoc" value="true"/>
-    </module>
-    <module name="JavadocStyle">
-      <property name="id" value="InvisibleJavadocStyle"/>
-      <property name="scope" value="private"/>
-    </module>
+    <module name="SummaryJavadoc"/>
     <module name="JavadocType">
       <property name="excludeScope" value="anoninner"/>
       <property name="authorFormat" value="^.+ .+$"/>
