@@ -85,12 +85,12 @@
     <version.plugin.source>3.4.0</version.plugin.source>
     <version.plugin.surefire>3.6.0</version.plugin.surefire>
 
-    <version.plugin.build-helper>3.6.1</version.plugin.build-helper>
+    <version.plugin.build-helper>3.6.2</version.plugin.build-helper>
     <version.plugin.central-publishing>0.11.0</version.plugin.central-publishing>
     <version.plugin.i18n>3.1.2</version.plugin.i18n>
     <version.plugin.robtimus-build-helper>2.0</version.plugin.robtimus-build-helper>
-    <version.plugin.templating>3.1.0</version.plugin.templating>
-    <version.plugin.versions>2.21.0</version.plugin.versions>
+    <version.plugin.templating>3.1.1</version.plugin.templating>
+    <version.plugin.versions>2.22.0</version.plugin.versions>
 
     <!-- Always define argLine so @{argLine} can always be used -->
     <argLine />
