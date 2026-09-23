@@ -64,7 +64,7 @@
     <version.checkstyle-extension>1.0.1</version.checkstyle-extension>
     <version.hamcrest>3.0</version.hamcrest>
     <version.junit>5.14.4</version.junit>
-    <version.mockito>5.23.0</version.mockito>
+    <version.mockito>5.24.0</version.mockito>
 
     <version.plugin.antrun>3.2.0</version.plugin.antrun>
     <version.plugin.assembly>3.8.0</version.plugin.assembly>
